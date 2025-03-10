@@ -4,13 +4,21 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 ## Development server
 
-To start a local development server, run:
+Para encender el servidor local se debe colocar el siguiente comando para que acceda sin proxy al server:
 
 ```bash
 ng serve --proxy-config src/proxy.conf.json
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Jest pruebas unitarias
+
+Para ejecutar las pruebas en jest se debe colocar el siguiente comando:
+
+```bash
+npm test
+```
 
 ## Code scaffolding
 
