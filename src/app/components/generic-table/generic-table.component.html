@@ -1,0 +1,58 @@
+<div class="table-container">
+    <div class="container-actions">
+        <app-styled-input class="input-search" placeholder="Search..."
+            (searchChange)="updateSearchTerm($event)"></app-styled-input>
+        <button routerLink="/create_product">Agregar</button>
+    </div>
+    <div class="container-component">
+        <table>
+            <thead>
+                <tr>
+                    @for (column of columns; track column.nombre; let i = $index) {
+                    @if (i === 0) {
+                    <th class="headers-id">{{column.nombre}}</th>
+                    } @else {
+                    <th class="headers">
+                        {{column.nombre}}
+                        @if(column.informacion){
+                        <span>i</span>
+                        }
+                    </th>
+                    }
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for (d of filteredUsers; track d) {
+                <tr>
+                    <td class="logo-container">
+                        <img src="{{ d.logo }}" alt="cash" class="logo" />
+                    </td>
+                    <td>{{ d.name }}</td>
+                    <td>{{ d.description }}</td>
+                    <td>{{ d.date_release }}</td>
+                    <td>{{ d.date_revision }}</td>
+                    <td>
+                        <app-menu-desplegable [variable]="d.id"></app-menu-desplegable>
+                    </td>
+                </tr>
+                } @empty {
+                <tr class="empty">
+                    <td [attr.colspan]="columns.length">
+                        <span>No hay datos disponibles</span>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        <div class="info-tabla">
+            <p class="result">{{ filteredUsers.length }} Resultados</p>
+            <select [(ngModel)]="selectedOption">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">15</option>
+            </select>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,93 @@
+<main class="main">
+    <div class="content">
+        <div class="form-container">
+            <div class="header">
+                <h3>Formulario de Edición</h3>
+            </div>
+            <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()" class="form-style">
+                <div>
+                    <app-styled-input label="ID" formControlName="id"
+                        [dynamicClasses]="{'is-invalid': !!formulario.get('id')?.invalid && !!formulario.get('id')?.touched}"
+                        [placeholder]="'Id del producto'"></app-styled-input>
+                    @if(formulario.get('id')?.invalid && formulario.get('id')?.touched){
+                    <div class="invalid-feedback">
+                        @if(formulario.get('id')?.errors?.['pattern'] || formulario.get('id')?.errors?.['required']){
+                        <small>ID no válido</small>
+                        }
+                    </div>
+                    }
+                </div>
+                <div>
+                    <app-styled-input label="Nombre" formControlName="nombre"
+                        [dynamicClasses]="{'is-invalid': !!formulario.get('nombre')?.invalid && !!formulario.get('nombre')?.touched}"
+                        placeholder="Nombre del producto"></app-styled-input>
+                    @if(formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched){
+                    <div class="invalid-feedback">
+                        @if(formulario.get('nombre')?.errors?.['pattern'] ||
+                        formulario.get('nombre')?.errors?.['required']){
+                        <small>Este campo es requerido!</small>
+                        }
+                    </div>
+                    }
+                </div>
+                <div>
+                    <app-styled-input label="Descripción" formControlName="descripcion"
+                        [dynamicClasses]="{'is-invalid': !!formulario.get('descripcion')?.invalid && !!formulario.get('descripcion')?.touched}"
+                        placeholder="Descripción del producto"></app-styled-input>
+                    @if(formulario.get('descripcion')?.invalid && formulario.get('descripcion')?.touched){
+                    <div class="invalid-feedback">
+                        @if(formulario.get('descripcion')?.errors?.['pattern'] ||
+                        formulario.get('descripcion')?.errors?.['required']){
+                        <small>Este campo es requerido!</small>
+                        }
+                    </div>
+                    }
+                </div>
+                <div>
+                    <app-styled-input label="Logo" formControlName="logo"
+                        [dynamicClasses]="{'is-invalid': !!formulario.get('logo')?.invalid && !!formulario.get('logo')?.touched}"
+                        placeholder="Logo URL"></app-styled-input>
+                    @if(formulario.get('logo')?.invalid && formulario.get('logo')?.touched){
+                    <div class="invalid-feedback">
+                        @if(formulario.get('logo')?.errors?.['required']){
+                        <small>Este campo es requerido!</small>
+                        }
+                        @if(formulario.get('logo')?.errors?.['pattern']){
+                        <small>Url no valida</small>
+                        }
+                    </div>
+                    }
+                </div>
+                <div>
+                    <app-styled-input label="Fecha Liberación" formControlName="fechaLiberacion" tipo="date"
+                        [dynamicClasses]="{'is-invalid': !!formulario.get('fechaLiberacion')?.invalid && !!formulario.get('fechaLiberacion')?.touched}"
+                        placeholder="dd/mm/aaaa"></app-styled-input>
+                    @if(formulario.get('fechaLiberacion')?.invalid && formulario.get('fechaLiberacion')?.touched){
+                    <div class="invalid-feedback">
+                        @if(formulario.get('fechaLiberacion')?.errors?.['pattern'] ||
+                        formulario.get('fechaLiberacion')?.errors?.['required']){
+                        <small>Este campo es requerido!</small>
+                        }
+                    </div>
+                    }
+                </div>
+                <div>
+                    <app-styled-input label="Fecha Revisión" formControlName="fechaRevision" tipo="date"
+                        [dynamicClasses]="{'is-invalid': !!formulario.get('fechaRevision')?.invalid && !!formulario.get('fechaRevision')?.touched}"
+                        placeholder="dd/mm/aaaa"></app-styled-input>
+                    @if(formulario.get('fechaRevision')?.invalid && formulario.get('fechaRevision')?.touched){
+                    <div class="invalid-feedback">
+                        @if(formulario.get('fechaRevision')?.errors?.['pattern'] ||
+                        formulario.get('fechaRevision')?.errors?.['required']){
+                        <small>Este campo es requerido!</small>
+                        }
+                    </div>
+                    }
+                </div>
+                <div class="button-container">
+                    <button class="button-send" type="submit">Editar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

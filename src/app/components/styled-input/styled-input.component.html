@@ -1,0 +1,5 @@
+<div class="input-group">
+    <label [for]="name">{{label}}</label>
+    <input [type]="tipo" [id]="name" [name]="name" [placeholder]="placeholder" [disabled]="disabled" [(ngModel)]="value"
+        [required]="required" [ngClass]="dynamicClasses" [value]="value" (input)="handleInput($event)">
+</div>

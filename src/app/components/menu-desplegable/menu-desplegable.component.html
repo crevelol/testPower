@@ -1,0 +1,25 @@
+<!-- Contenedor clickeable -->
+<div (click)="toggleMenu()" class="menu-toggle">
+    <img src="icons/menu.svg" alt="cash" class="menu-image" />
+    <!-- Menú desplegable -->
+    @if(isMenuVisible){
+    <div class="menu">
+        <ul>
+            <li><a [routerLink]="'/editar/' + variable">Editar</a></li>
+            <li><a (click)="toggleModal()">Eliminar</a></li>
+        </ul>
+    </div>
+    }
+</div>
+
+@if(showModal){
+<div class="modal-overlay">
+    <div class="modal-content">
+        <p>¿Estas seguro de eliminar el producto {{variable}}?</p>
+        <div class="modal-buttons">
+            <button (click)="closeModal()" class="button-reset">Cancelar</button>
+            <button (click)="eliminarRegistro()" class="button-send">Confirmar</button>
+        </div>
+    </div>
+</div>
+}

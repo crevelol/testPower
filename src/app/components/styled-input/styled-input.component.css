@@ -1,0 +1,36 @@
+.input-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label{
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.input-group input{
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    border-radius: 0.4rem;
+    border: 2px solid #c5c5c5;
+    min-width: 18rem;
+    max-width: 20rem;
+}
+
+.input-group input:focus{
+    border-color: #6a8093; /* Cambia el borde a verde al enfocar */
+    outline: none;
+}
+
+.input-group input::placeholder{
+    color: rgb(73, 73, 73);
+    font-size: small;
+}
+
+.is-invalid{
+    border-color: #ff0000 !important; /* Cambia el borde a verde al enfocar */
+    outline: none;
+}

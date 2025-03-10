@@ -1,0 +1,134 @@
+/* Contenedor clickeable */
+.menu-toggle {
+    color: white;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Menú desplegable */
+.menu {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    position: absolute;
+    /* Ajusta según sea necesario */
+    width: 200px;
+    margin-left: -12rem;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.menu ul li a:hover {
+    background-color: #ddd;
+}
+
+.menu-image{
+    width: 1.2rem;
+    background-color: white;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    border-radius: 1rem;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+.menu-image:hover{
+    background-color: #dbdbdb;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+  }
+
+  .modal-content p{
+    padding-bottom: 3rem;
+    font-weight: 600;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  .modal-buttons{
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #c2bfe5;
+  }
+
+  .modal-buttons button{
+    padding: 1rem;
+    flex: 1;
+  }
+
+  .button-reset {
+    background-color: #d5d6de;
+    color: #00061a;
+    border: none;
+    border-radius: 0;
+    padding: 15px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-reset:hover {
+    background-color: #e1e5f6;
+    color: #44495b;
+}
+
+.button-send {
+    background-color: #eed866;
+    color: #00061a;
+    border: none;
+    border-radius: 0;
+    padding: 15px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-send:hover {
+    background-color: #f8eaa6;
+    color: #44495b;
+}
+  
